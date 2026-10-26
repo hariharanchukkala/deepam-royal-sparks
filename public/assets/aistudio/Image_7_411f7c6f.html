@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deepam Merchant Console</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#fbeee7",
+            "inverse-surface": "#362f2b",
+            "surface-variant": "#ece0d9",
+            "primary-container": "#661023",
+            "on-error": "#ffffff",
+            "outline-variant": "#dbc0c1",
+            "on-tertiary-container": "#7ca48b",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#133a27",
+            "on-surface": "#201a16",
+            "inverse-primary": "#ffb2b9",
+            "surface-container-highest": "#ece0d9",
+            "on-surface-variant": "#554243",
+            "on-secondary-container": "#735700",
+            "on-secondary": "#ffffff",
+            "secondary": "#775a00",
+            "error": "#ba1a1a",
+            "surface-container": "#f8ebe5",
+            "tertiary-fixed": "#c2edd0",
+            "on-tertiary-fixed-variant": "#284e3a",
+            "surface-dim": "#e4d8d1",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#450011",
+            "tertiary": "#002414",
+            "on-secondary-fixed": "#251a00",
+            "on-primary-fixed": "#40000f",
+            "primary-fixed": "#ffdadc",
+            "surface-container-low": "#fef1ea",
+            "on-tertiary-fixed": "#002112",
+            "secondary-container": "#fece57",
+            "surface-tint": "#a03d4c",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#ec7886",
+            "background": "#fff8f5",
+            "on-background": "#201a16",
+            "surface": "#fff8f5",
+            "on-primary-fixed-variant": "#812535",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#eec14b",
+            "on-secondary-fixed-variant": "#5a4300",
+            "primary-fixed-dim": "#ffb2b9",
+            "outline": "#887173",
+            "tertiary-fixed-dim": "#a6d0b5",
+            "surface-container-high": "#f2e6df",
+            "secondary-fixed": "#ffdf98",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fff8f5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "3rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen antialiased selection:bg-primary selection:text-on-primary pb-28">
+<!-- Regal Merchant Navigation Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-primary-container text-on-primary shadow-md">
+<div class="max-w-md mx-auto px-margin py-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[20px]" data-icon="stars" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white leading-tight">Deepam Merchant Console</h1>
+<p class="font-label-sm text-label-sm text-secondary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="location_on">location_on</span>
+              Sivakasi Hub 01 • PESO Dispatch Center
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Notifications" class="relative w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center hover:bg-primary transition-colors text-white">
+<span class="material-symbols-outlined text-[18px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-primary-container"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary-container/50 flex items-center justify-center text-secondary-fixed font-label-md text-label-md">
+            SH
+          </div>
+</div>
+</div>
+<!-- Store Status Toggle Bar -->
+<div class="flex items-center justify-between bg-primary/60 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-secondary-container/20">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-fixed"></span>
+</span>
+<span class="font-label-md text-label-md text-white font-medium">Store Online (Accepting Orders)</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tertiary-container"></div>
+</label>
+</div>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="max-w-md mx-auto px-margin pt-32 flex flex-col gap-5">
+<!-- Festive Sales Snapshot (KPI Cards) -->
+<section aria-labelledby="sales-kpi-heading">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="flare">flare</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold" id="sales-kpi-heading">Festive Sales Snapshot</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded border border-outline-variant/40">Diwali Rush '24</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- WhatsApp Orders KPI -->
+<div class="bg-surface-container-low rounded-lg p-2.5 border border-outline-variant/30 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute -right-2 -bottom-2 text-primary/5 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[48px]" data-icon="chat">chat</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Today's Orders</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5">42</p>
+</div>
+<div class="mt-2 flex items-center text-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+<span>+18%</span>
+</div>
+</div>
+<!-- Festive Revenue KPI -->
+<div class="bg-surface-container-low rounded-lg p-2.5 border border-outline-variant/30 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute -right-2 -bottom-2 text-secondary/10 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[48px]" data-icon="currency_rupee">currency_rupee</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Festive Revenue</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5 leading-tight">₹2,48,600</p>
+</div>
+<div class="mt-2 flex items-center text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="account_balance">account_balance</span>
+<span>Verified</span>
+</div>
+</div>
+<!-- Pending Dispatch KPI -->
+<div class="bg-surface-container-low rounded-lg p-2.5 border border-outline-variant/30 flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute -right-2 -bottom-2 text-primary/5 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[48px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Pending</span>
+<p class="font-headline-sm text-headline-sm text-primary-container font-bold mt-0.5">14</p>
+</div>
+<div class="mt-2 flex items-center text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>Hampers</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Real-Time Inventory Control Section -->
+<section aria-labelledby="inventory-control-heading" class="bg-surface-container-low rounded-xl p-3.5 border border-outline-variant/40 shadow-sm">
+<div class="flex items-center justify-between pb-2.5 border-b border-outline-variant/30">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold flex items-center gap-1.5" id="inventory-control-heading">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="inventory_2">inventory_2</span>
+            Inventory Hot-List
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant stock gating for online WhatsApp catalogue</p>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-0.5 hover:text-primary-container transition-colors">
+          Manage All
+          <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant/20 pt-1">
+<!-- Item 1: Maharaja 50-Shot Willow -->
+<div class="py-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Maharaja 50-Shot Willow</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+                  In Stock
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">38 units left</span>
+</div>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Item 2: Sahasra Silver Fountain -->
+<div class="py-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="mode_fan">mode_fan</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Sahasra Silver Fountain</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                  Low Stock
+                </span>
+<span class="font-body-sm text-body-sm text-error font-medium">6 units left</span>
+</div>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Item 3: Royal Thunder King -->
+<div class="py-2.5 flex items-center justify-between gap-2 opacity-95">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[22px]" data-icon="noise_aware">noise_aware</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface/80 font-semibold truncate line-through decoration-outline">Royal Thunder King</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="inline-flex items-center px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+                  OUT OF STOCK
+                </span>
+<button class="font-label-sm text-label-sm text-primary font-bold underline hover:text-primary-container">Quick Restock</button>
+</div>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Live WhatsApp Order Pipeline Tracker -->
+<section aria-labelledby="pipeline-heading" class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold flex items-center gap-1.5" id="pipeline-heading">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]" data-icon="forum">forum</span>
+            WhatsApp Order Pipeline
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live chat leads synced with regional warehouse</p>
+</div>
+<button aria-label="Refresh pipeline" class="p-1.5 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+</button>
+</div>
+<!-- Filter Tabs (Horizontal Scrollable) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="px-3 py-1.5 rounded-full bg-primary-container text-white font-label-sm text-label-sm whitespace-nowrap shadow-sm">
+          All (42)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant">
+          New (8)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant">
+          Confirmed (12)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant">
+          Packed (8)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-variant">
+          Dispatched (14)
+        </button>
+</div>
+<!-- Order Cards List -->
+<div class="flex flex-col gap-3">
+<!-- Order Card #DSP-8921 -->
+<article class="bg-surface-container-low rounded-xl border border-secondary-container/40 p-3.5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary-container"></div>
+<div class="flex items-start justify-between gap-2 mb-2 pl-1">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-primary">#DSP-8921</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]" data-icon="mark_chat_unread">mark_chat_unread</span>
+                  New from WhatsApp
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold mt-1">Aditya Sharma • Bengaluru</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lead via Official WhatsApp Bot • 4 mins ago</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">₹4,700</span>
+<span class="block font-label-sm text-label-sm text-tertiary-container font-semibold">Prepaid GPay</span>
+</div>
+</div>
+<!-- Items Summary Widget -->
+<div class="bg-surface-container/60 rounded p-2.5 my-2.5 border border-outline-variant/20 pl-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 font-semibold">Ordered Manifest (3 Items)</p>
+<ul class="text-body-sm font-body-sm text-on-surface space-y-0.5">
+<li class="flex justify-between">
+<span>1× Shahi Anar Deluxe Box (5 Pcs)</span>
+<span class="text-on-surface-variant">₹1,200</span>
+</li>
+<li class="flex justify-between">
+<span>2× Maharaja 50-Shot Willow Aerial</span>
+<span class="text-on-surface-variant">₹3,000</span>
+</li>
+<li class="flex justify-between">
+<span>1× Eco Lockets Green Formulation</span>
+<span class="text-on-surface-variant">₹500</span>
+</li>
+</ul>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-col gap-2 pl-1">
+<button class="w-full bg-[#204632] hover:bg-[#133a27] text-white py-2 px-3 rounded flex items-center justify-center gap-2 font-label-md text-label-md transition-all active:scale-[0.99] shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+              Confirm Order via WhatsApp
+            </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-surface-container-highest hover:bg-surface-variant text-on-surface py-2 px-2.5 rounded border border-outline-variant/50 font-label-sm text-label-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt">receipt</span>
+                Packing Slip
+              </button>
+<button class="bg-primary hover:bg-primary-container text-white py-2 px-2.5 rounded font-label-sm text-label-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory">inventory</span>
+                Mark Packed
+              </button>
+</div>
+</div>
+</article>
+<!-- Order Card #DSP-8919 -->
+<article class="bg-surface-container-low rounded-xl border border-outline-variant/30 p-3.5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary-container"></div>
+<div class="flex items-start justify-between gap-2 mb-2 pl-1">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-primary">#DSP-8919</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/40 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-tertiary-container" data-icon="check_circle">check_circle</span>
+                  Packed - Ready for Freight
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold mt-1">Kavita Iyer • Chennai</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Royal Grand Hamper Tier II • Verified PESO Van</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">₹8,200</span>
+<span class="block font-label-sm text-label-sm text-tertiary-container font-semibold">Paid In Full</span>
+</div>
+</div>
+<div class="bg-surface-container/40 rounded p-2.5 my-2 border border-outline-variant/20 flex items-center justify-between pl-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="local_shipping">local_shipping</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">ST Courier Hazardous Freight</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Docket #ST-CHE-99214</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed px-2 py-0.5 rounded text-on-tertiary-fixed font-bold">Slot: 5 PM</span>
+</div>
+<!-- Single Action for Packed Card -->
+<div class="pl-1 pt-1">
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-primary border border-primary/20 py-2 px-3 rounded flex items-center justify-center gap-1.5 font-label-md text-label-md transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]" data-icon="near_me">near_me</span>
+              Track Consignment
+            </button>
+</div>
+</article>
+</div>
+</section>
+<!-- Regulatory Compliance Banner for Sivakasi Merchants -->
+<section class="bg-tertiary-fixed/40 border border-tertiary-container/20 rounded-lg p-3 flex items-start gap-2.5 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" data-icon="verified_user">verified_user</span>
+<div>
+<h3 class="font-label-md text-label-md font-bold text-tertiary-container">PESO Dispatch Protocol Active</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight mt-0.5">
+          All WhatsApp manifest orders automatically append CSIR-NEERI green cracker QR seals before courier handover.
+        </p>
+</div>
+</section>
+</main>
+<!-- Bottom Admin Menu Navigation Bar -->
+<nav aria-label="Merchant Admin Navigation" class="fixed bottom-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(102,10,35,0.06)] border-t border-outline-variant/30">
+<div class="max-w-md mx-auto flex justify-around items-center px-space-xs py-space-xs pb-safe">
+<!-- Nav Item 1: Orders (Active Tab) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-semibold gap-1 py-1" href="#orders">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="receipt_long" data-weight="fill" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="absolute -top-1 -right-2 px-1 py-0.2 bg-primary-container text-white text-[9px] font-bold rounded-full">42</span>
+</div>
+<span class="font-label-sm text-label-sm">Orders</span>
+</a>
+<!-- Nav Item 2: Inventory -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 py-1 hover:text-primary transition-colors" href="#inventory">
+<span class="material-symbols-outlined text-[22px]" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-sm text-label-sm">Inventory</span>
+</a>
+<!-- Nav Item 3: WhatsApp Bot Settings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 py-1 hover:text-primary transition-colors" href="#bot-settings">
+<div class="relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="smart_toy">smart_toy</span>
+<span class="absolute top-0 right-0 w-2 h-2 rounded-full bg-tertiary-container"></span>
+</div>
+<span class="font-label-sm text-label-sm">Bot Rules</span>
+</a>
+<!-- Nav Item 4: Analytics -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 py-1 hover:text-primary transition-colors" href="#analytics">
+<span class="material-symbols-outlined text-[22px]" data-icon="insights">insights</span>
+<span class="font-label-sm text-label-sm">Analytics</span>
+</a>
+</div>
+</nav>
+<!-- Interactive Demo Micro-script for Stock and Toggles -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggles = document.querySelectorAll('input[type="checkbox"]');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('change', (e) => {
+          const isChecked = e.target.checked;
+          const label = e.target.closest('div, label').parentElement.querySelector('.truncate');
+          if (label && !isChecked) {
+            console.log(`Merchant gated stock for: ${label.innerText}`);
+          }
+        });
+      });
+    });
+  </script>
+</body></html>

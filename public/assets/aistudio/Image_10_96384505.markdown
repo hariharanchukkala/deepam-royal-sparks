@@ -1,0 +1,216 @@
+---
+name: Imperial Utsav Luxury Pyrotechnics
+colors:
+  surface: '#fff8f5'
+  surface-dim: '#e4d8d1'
+  surface-bright: '#fff8f5'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#fef1ea'
+  surface-container: '#f8ebe5'
+  surface-container-high: '#f2e6df'
+  surface-container-highest: '#ece0d9'
+  on-surface: '#201a16'
+  on-surface-variant: '#554243'
+  inverse-surface: '#362f2b'
+  inverse-on-surface: '#fbeee7'
+  outline: '#887173'
+  outline-variant: '#dbc0c1'
+  surface-tint: '#a03d4c'
+  primary: '#450011'
+  on-primary: '#ffffff'
+  primary-container: '#661023'
+  on-primary-container: '#ec7886'
+  inverse-primary: '#ffb2b9'
+  secondary: '#775a00'
+  on-secondary: '#ffffff'
+  secondary-container: '#fece57'
+  on-secondary-container: '#735700'
+  tertiary: '#002414'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#133a27'
+  on-tertiary-container: '#7ca48b'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#ffdadc'
+  primary-fixed-dim: '#ffb2b9'
+  on-primary-fixed: '#40000f'
+  on-primary-fixed-variant: '#812535'
+  secondary-fixed: '#ffdf98'
+  secondary-fixed-dim: '#eec14b'
+  on-secondary-fixed: '#251a00'
+  on-secondary-fixed-variant: '#5a4300'
+  tertiary-fixed: '#c2edd0'
+  tertiary-fixed-dim: '#a6d0b5'
+  on-tertiary-fixed: '#002112'
+  on-tertiary-fixed-variant: '#284e3a'
+  background: '#fff8f5'
+  on-background: '#201a16'
+  surface-variant: '#ece0d9'
+typography:
+  display-lg:
+    fontFamily: Playfair Display
+    fontSize: 48px
+    fontWeight: '600'
+    lineHeight: 56px
+    letterSpacing: -0.02em
+  display-lg-mobile:
+    fontFamily: Playfair Display
+    fontSize: 34px
+    fontWeight: '600'
+    lineHeight: 42px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Playfair Display
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+  headline-lg-mobile:
+    fontFamily: Playfair Display
+    fontSize: 26px
+    fontWeight: '600'
+    lineHeight: 34px
+  headline-md:
+    fontFamily: Playfair Display
+    fontSize: 24px
+    fontWeight: '500'
+    lineHeight: 32px
+  headline-sm:
+    fontFamily: Playfair Display
+    fontSize: 20px
+    fontWeight: '500'
+    lineHeight: 28px
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 26px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+  body-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 18px
+  label-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '600'
+    lineHeight: 20px
+    letterSpacing: 0.02em
+  label-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0.04em
+  label-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 10px
+    fontWeight: '700'
+    lineHeight: 14px
+    letterSpacing: 0.06em
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-desktop: 1.5rem
+  margin: 1rem
+  margin-tablet: 1.5rem
+  margin-desktop: 3rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system establishes an ultra-premium, mobile-first visual architecture for luxury ceremonial pyrotechnics. Rejecting the noisy, kitsch-laden tropes of standard retail firework packaging, the aesthetic draws inspiration from heritage Indian royal celebrations, royal court seals, and high-end atelier e-commerce.
+
+The visual direction marries **Warm Heritage Elegance** with **Technical Precision**. It projects celebration, grandeur, and uncompromised safety (PESO compliance and certified green formulations) to high-net-worth patrons, royal weddings, grand festival planners, and luxury hospitality buyers. 
+
+Key attributes:
+- **Atmospheric Warmth:** Creamy, ivory paper-like surfaces that evoke heirloom parchment and gold-leaf stationery.
+- **Editorial Regality:** High-contrast vermilion and royal maroon focal points accented with luminous champagne gold details.
+- **Technical Rigor:** Precise, clean tabular data layers displaying sound thresholds, aerial diameter, chemical smoke profile, and burn durations.
+- **Conscious Festivity:** Prominent architectural badging system denoting eco-friendly certification, zero-barium compounds, and authorized institutional shipping.
+
+## Colors
+
+The palette is tuned around tactile, radiant festive papercraft and precious metals:
+
+- **Primary (`#661023` - Kumkum Maroon):** A deep, rich ceremonial crimson anchor used for high-tier CTAs, signature typography, and prime structural accents.
+- **Secondary (`#C59B27` - Champagne Gold):** A refined brushed-gold accent for badges, rating stars, premium spark tiers, and gold-foiled framing edges.
+- **Tertiary (`#204632` - Royal Forest Green):** Reserved strictly for eco-safety metrics, PESO certification tags, CSIR-NEERI Green Cracker authenticity seals, and direct WhatsApp commerce buttons.
+- **Neutral (`#241E1A` - Roasted Espresso):** Deep charcoal-espresso grounding all body copy and technical metrics, avoiding the harshness of pure `#000000` against warm backdrops.
+- **Canvas Base:** Soft warm ivory (`#FDFBF7`) for the global canvas with warm cream card fills (`#F7F2EA`), evoking handmade archival stock.
+
+## Typography
+
+The typographic hierarchy establishes clear distinction between celebration and technical reassurance:
+
+- **Editorial Headlines (Playfair Display):** Conveys regal Indian craftsmanship, festive legacy, and artisanal value. Display sizes utilize delicate negative tracking and generous line heights to preserve elegance.
+- **Modern Utilitarian Mechanics (Plus Jakarta Sans):** Selected for high legibility across dense mobile screens. It powers product naming extensions, fire safety warnings, decibel ratings, and step-by-step pyrotechnic ignition guides.
+- **Labeling & Micro-specs:** Sub-labels, certified green cracker seals, and sound tier counters leverage uppercase `label-sm` with widened tracking (+0.06em) for clarity on compact screens.
+
+## Layout & Spacing
+
+A strictly regulated, fluid 4-column layout on mobile expands to an 8-column layout on tablet and a 12-column layout on desktop, capping at a maximum width of 1280px.
+
+- **Mobile Viewport (< 640px):** Employs a fixed outer canvas margin of `1rem` (16px) with 16px gutters between adjacent cards. Multi-card carousels utilize bleed-to-edge scrolling with initial margin snap.
+- **Tablet Viewport (640px - 1024px):** Increases outer canvas margins to `1.5rem` (24px) for 2-column or 3-column structured catalogue discovery.
+- **Desktop Viewport (> 1024px):** Centralized 12-column layout centered with `3rem` margins to preserve high-end white space.
+- **Spacing Rhythm:** Micro-paddings inside metadata clusters use `space-xs` (4px) and `space-sm` (8px). Structural separation between specification pills and action trays strictly uses `space-md` (16px) to avoid visual noise.
+
+## Elevation & Depth
+
+Visual hierarchy is maintained through delicate tonal stratification and low-contrast golden hairline rules rather than heavy digital drop shadows:
+
+- **Base Layer:** Natural matte Ivory surface (`#FDFBF7`).
+- **Product Tiles & Sheet Surfaces:** Raised using a warm container tint (`#F7F2EA`) framed by an ultra-thin 1px border (`#EBDDCB`).
+- **Hover & Active States:** Subtly elevated using an ambient, warm-tinted shadow: `0 8px 24px -4px rgba(102, 16, 35, 0.08)`.
+- **Modals, Floating Trays, and WhatsApp Drawers:** Backed with frosted glass warmth (`rgba(253, 251, 247, 0.88)` with `backdrop-filter: blur(12px)`) and anchored with a top hairline stroke of brushed champagne gold (`rgba(197, 155, 39, 0.4)`).
+- **Physical Depth Cue:** Gold foil-embossed stamps utilize an inset hairline highlight: `inset 0 1px 0 rgba(255, 255, 255, 0.6)`.
+
+## Shapes
+
+The design uses **Soft (Level 1)** geometric profiling. Radii are disciplined and deliberate (4px default, 8px on product cards, and 12px on overlay panels), evoking crisp die-cut ceremonial boxes and stamped royal envelopes rather than bubbly application interfaces. 
+
+Interactive tags, technical badges, and experience chips feature crisp 4px corners. Strict square aspects are used on thumbnail grids, while primary action buttons use a subtle 4px corner curve to retain crispness and architectural weight.
+
+## Components
+
+### Buttons
+- **Primary Regal Button:** Deep vermilion/maroon (`#661023`) background, white text (`#FFFFFF`), 4px border-radius, minimum 48px height on mobile. Framed by a subtle internal gold edge on press.
+- **Secondary Champagne Button:** Warm cream background with a crisp 1px border in brushed gold (`#C59B27`), text in `#661023`.
+- **WhatsApp Concierge Button:** Deep Forest Green (`#204632`) or WhatsApp Teal (`#128C7E`) fill, crisp white text, accompanied by an authentic WhatsApp micro-icon, optimized for instant bulk order queries and institutional verification.
+
+### Badges & Metadata Chips
+- **PESO & Certified Green Cracker Badge:** High-contrast pill badge with an emerald hairline border, `#204632` text, displaying official QR-verification and CSIR-NEERI accreditation status.
+- **Experience Spec Matrix:** A 3-tier compact horizontal widget displaying:
+  1. *Sound Index:* Decibel metric (e.g., `85 dB • Low Acoustic`) with acoustic wave icon.
+  2. *Aerial Canopy:* Flight height and spread (e.g., `120 ft • Golden Willow`).
+  3. *Burn Duration:* Radial countdown icon (e.g., `45s Continuous`).
+
+### Product Cards
+- Warm container canvas (`#F7F2EA`) framed with 1px border (`#EBDDCB`).
+- Square 1:1 media box supporting high-resolution daytime packaging renders alongside low-light night sky ignition videos.
+- Fixed bottom drawer containing pricing in bold roasted espresso (`#241E1A`), green certificate indicator, and instant "Add to Hamper" quick-action.
+
+### Inputs & Selectors
+- Flat fields with `#FDFBF7` background, 1px `#D9CCA9` border, turning to 1.5px `#661023` on focus with no glowing ring. Text in `#241E1A`.
+- Festive Quantity Stepper: Compact horizontal stepper with vermilion increment glyphs and ivory counter chamber.
+
+### WhatsApp Commerce Drawer
+- Persistent mobile bottom-dock for curated Diwali hampers, wedding consignments, and permit consultation, allowing single-tap export of the selected cart manifest directly into a verified enterprise WhatsApp thread.

@@ -1,0 +1,2245 @@
+# PREMIUM DEEPAVALI CRACKERS BUSINESS WEBSITE
+## COMPLETE FUNCTIONAL BUILD SPECIFICATION
+
+Build a complete premium Deepavali crackers e-commerce website for a real Indian fireworks retail business.
+
+This is intended to become a REAL BUSINESS WEBSITE.
+
+Do not build a simple landing page.
+
+Do not build a static UI mockup.
+
+Do not create fake buttons that do nothing.
+
+Do not create a generic AI-looking website.
+
+Build a functional customer shopping experience and a functional admin/business management system.
+
+The website should be designed to increase customer engagement, make product discovery enjoyable, reduce friction in ordering, and make it extremely easy for customers to send their complete order to the business through WhatsApp.
+
+The website must be mobile-first because many customers will access it through mobile phones and WhatsApp.
+
+The first version can use demo data, but the architecture must be ready to connect to a real database, real WhatsApp Business integration, and real payment processing later.
+
+============================================================
+PART 1 — BUSINESS OBJECTIVE
+============================================================
+
+The business sells Deepavali crackers/fireworks.
+
+The website's primary purpose is NOT to process a traditional online checkout immediately.
+
+The primary customer journey is:
+
+CUSTOMER VISITS WEBSITE
+        ↓
+DISCOVERS CRACKERS
+        ↓
+UNDERSTANDS WHAT EACH CRACKER DOES
+        ↓
+SEES PRICE
+        ↓
+ADDS PRODUCTS TO CART
+        ↓
+REVIEWS CART
+        ↓
+ENTERS CONTACT / DELIVERY DETAILS
+        ↓
+CREATES ORDER
+        ↓
+COMPLETE ORDER DETAILS ARE SENT TO BUSINESS WHATSAPP
+        ↓
+BUSINESS REVIEWS ORDER
+        ↓
+BUSINESS CONFIRMS AVAILABILITY
+        ↓
+BUSINESS SENDS PAYMENT INSTRUCTIONS
+        ↓
+CUSTOMER PAYS
+        ↓
+BUSINESS CONFIRMS PAYMENT
+        ↓
+ORDER IS PREPARED
+        ↓
+DELIVERY / PICKUP
+
+The website should make this flow feel effortless.
+
+============================================================
+PART 2 — DESIGN PHILOSOPHY
+============================================================
+
+The website must look like a premium Indian festive retail brand.
+
+The design should communicate:
+
+TRUST
+QUALITY
+FESTIVITY
+EXCITEMENT
+SIMPLICITY
+PREMIUM EXPERIENCE
+
+It must NOT look like:
+
+- AI-generated UI
+- Generic template
+- College project
+- SaaS dashboard
+- Cryptocurrency website
+- Gaming website
+- Cyberpunk website
+- Futuristic technology website
+- Over-designed Dribbble concept
+
+Avoid excessive:
+
+- gradients
+- glow effects
+- glassmorphism
+- floating shapes
+- animations
+- rounded cards
+- decorative elements
+- oversized headings
+
+Use visual hierarchy instead of decoration.
+
+============================================================
+PART 3 — COLOR SYSTEM
+============================================================
+
+Use a refined Deepavali-inspired palette.
+
+Primary:
+
+Deep maroon / festive red
+
+Secondary:
+
+Warm gold
+
+Background:
+
+Warm ivory / cream
+
+Text:
+
+Dark charcoal
+
+Supporting:
+
+Muted festive tones
+
+Do not make the entire website gold.
+
+Gold should be used as an accent for:
+
+- buttons
+- icons
+- highlights
+- borders
+- small decorative elements
+
+Keep backgrounds mostly clean.
+
+============================================================
+PART 4 — TYPOGRAPHY
+============================================================
+
+Use premium, highly readable typography.
+
+Headings can have a subtle Indian/festive character, but readability is more important.
+
+Body text must be extremely clear.
+
+Use proper font hierarchy:
+
+Hero heading
+Section heading
+Product name
+Price
+Supporting text
+Small metadata
+
+Avoid excessive uppercase text.
+
+Prices should be visually prominent.
+
+============================================================
+PART 5 — NATURAL PRODUCT PHOTOGRAPHY
+============================================================
+
+This is extremely important.
+
+Use realistic product photographs.
+
+The website should eventually use actual photographs supplied by the business.
+
+For the preview, use natural-looking product imagery that resembles real Indian fireworks products.
+
+Do NOT use:
+
+- AI-generated-looking product images
+- cartoon fireworks
+- futuristic 3D objects
+- fake CGI packaging
+- neon fireworks
+- unrealistic fantasy scenes
+
+Product images should look like:
+
+A real product photographed for an Indian fireworks shop.
+
+Use consistent aspect ratios.
+
+Product cards should have clean backgrounds.
+
+Product detail pages can use larger images.
+
+Support multiple images per product.
+
+Support optional short demonstration videos.
+
+The admin should eventually be able to upload and replace product images.
+
+============================================================
+PART 6 — HOMEPAGE STRUCTURE
+============================================================
+
+The homepage should be a SALES-ORIENTED CUSTOMER EXPERIENCE.
+
+Do not dump the entire catalogue on the first screen.
+
+Create the following sections.
+
+------------------------------------------------------------
+6.1 HEADER
+------------------------------------------------------------
+
+Desktop navigation:
+
+LOGO
+
+Home
+Shop
+Categories
+Best Sellers
+Combos
+Offers
+Contact
+
+Search
+
+Cart
+
+Mobile navigation:
+
+Logo
+Search
+Cart
+Menu
+
+Cart must show the number of products/items.
+
+Example:
+
+Cart 3
+
+The header should remain usable while scrolling.
+
+------------------------------------------------------------
+6.2 HERO SECTION
+------------------------------------------------------------
+
+Use a beautiful natural Deepavali celebration photograph.
+
+The hero should communicate emotion.
+
+Suggested copy:
+
+"Make This Deepavali Brighter"
+
+Supporting text:
+
+"Explore crackers, discover the experience, and build your celebration."
+
+Primary button:
+
+"Explore Crackers"
+
+Secondary button:
+
+"View Best Sellers"
+
+Do not make the hero overly crowded.
+
+------------------------------------------------------------
+6.3 QUICK CATEGORY DISCOVERY
+------------------------------------------------------------
+
+Section title:
+
+"Explore the Celebration"
+
+Show visually attractive category cards.
+
+Examples:
+
+Sparklers
+
+Flower Pots
+
+Rockets
+
+Ground Chakras
+
+Fountains
+
+Fancy Crackers
+
+Gift Packs
+
+Combo Packs
+
+Each category is clickable.
+
+Clicking a category filters the shop.
+
+------------------------------------------------------------
+6.4 CUSTOMER-INTENT CATEGORIES
+------------------------------------------------------------
+
+Create another section:
+
+"What are you looking for?"
+
+Examples:
+
+Bright & Colourful
+
+Sky Effects
+
+Ground Effects
+
+Family Celebration
+
+Low Sound
+
+Longer Experience
+
+Combo Packs
+
+Best Sellers
+
+These should lead customers toward appropriate products.
+
+Do not make claims about safety or suitability unless the actual product data supports them.
+
+------------------------------------------------------------
+6.5 FEATURED PRODUCTS
+------------------------------------------------------------
+
+Show 8–12 featured products.
+
+Each product card contains:
+
+Image
+
+Product name
+
+Short experience description
+
+Price
+
+MRP if available
+
+Discount
+
+Pack size
+
+Experience indicators
+
+Stock status
+
+Add to Cart
+
+Example:
+
+DELUXE FLOWER POT
+
+"Bright golden fountain effect"
+
+✨ Bright
+
+🔊 Low sound
+
+⏱ Approx. 30 sec
+
+5 pcs
+
+₹450
+
+₹550
+
+[ ADD TO CART ]
+
+------------------------------------------------------------
+6.6 BEST SELLERS
+------------------------------------------------------------
+
+Create:
+
+"Most Loved This Deepavali"
+
+Display popular products.
+
+Use "Best Seller" only where the business actually identifies the product as a bestseller.
+
+Do not fabricate review counts or customer numbers.
+
+------------------------------------------------------------
+6.7 BUILD YOUR CELEBRATION
+------------------------------------------------------------
+
+Create a prominent combo/bundle section.
+
+Examples:
+
+Starter Celebration
+
+Family Celebration
+
+Grand Celebration
+
+Each combo displays:
+
+Price
+
+Items included
+
+Savings
+
+Experience
+
+CTA:
+
+"Add Combo"
+
+When clicked, all products in the combo should be added to the cart.
+
+Inventory must be checked before adding a combo.
+
+------------------------------------------------------------
+6.8 WHY SHOP WITH US
+------------------------------------------------------------
+
+Use a clean trust section.
+
+Examples:
+
+Clear Prices
+
+Easy WhatsApp Ordering
+
+Order Confirmation
+
+Local Delivery / Pickup
+
+Customer Support
+
+Genuine Product Information
+
+Do not make unsupported claims such as "100% guaranteed" or "lowest price in India."
+
+------------------------------------------------------------
+6.9 FINAL CALL TO ACTION
+------------------------------------------------------------
+
+End the homepage with:
+
+"Ready to Plan Your Deepavali?"
+
+Button:
+
+"Shop All Crackers"
+
+============================================================
+PART 7 — SHOP PAGE
+============================================================
+
+Create a complete product catalogue.
+
+Top area:
+
+Search products
+
+Category filter
+
+Price filter
+
+Experience filter
+
+Sort
+
+Product count
+
+Sorting options:
+
+Popular
+
+Price Low to High
+
+Price High to Low
+
+Newest
+
+Recommended
+
+Products must update dynamically.
+
+------------------------------------------------------------
+7.1 PRODUCT CARD
+------------------------------------------------------------
+
+Each card should contain:
+
+Product image
+
+Product name
+
+Category
+
+One-line experience
+
+Price
+
+MRP
+
+Discount
+
+Pack size
+
+Availability
+
+Quantity selector
+
+Add to Cart
+
+Use a quick-add interaction.
+
+When Add to Cart is clicked:
+
+Show a subtle confirmation.
+
+Example:
+
+"Added to your celebration"
+
+Update cart count immediately.
+
+Do not redirect the customer away from the catalogue unless appropriate.
+
+============================================================
+PART 8 — PRODUCT EXPERIENCE
+============================================================
+
+This is the most important feature for customer engagement.
+
+The customer should understand:
+
+WHAT DOES THIS CRACKER DO?
+
+WHAT WILL I SEE?
+
+WHAT WILL I HEAR?
+
+HOW LONG DOES IT LAST?
+
+HOW MANY PIECES ARE INCLUDED?
+
+HOW MUCH DOES IT COST?
+
+For every product create an experience information section.
+
+Example:
+
+DELUXE FLOWER POT
+
+Visual Experience:
+Bright golden fountain with sparkling effects.
+
+Sound:
+Low
+
+Approximate Duration:
+30 seconds
+
+Pack Size:
+5 pieces
+
+Best For:
+Family celebration
+
+Price:
+₹450
+
+Use icons carefully.
+
+Do not make unsupported claims.
+
+------------------------------------------------------------
+8.1 PRODUCT VIDEO
+------------------------------------------------------------
+
+Allow an optional demonstration video.
+
+The video should:
+
+- Have a thumbnail
+- Have a play button
+- Not autoplay sound
+- Be optimized for mobile
+- Load only when needed
+
+The business should be able to replace demo videos with real product videos.
+
+============================================================
+PART 9 — PRODUCT DETAIL PAGE
+============================================================
+
+Create a premium product detail page.
+
+Desktop:
+
+Left:
+Image/video gallery
+
+Right:
+Product information
+
+Mobile:
+
+Image/video
+
+Product information
+
+Price
+
+Experience
+
+Quantity
+
+CTA
+
+Include:
+
+Product name
+
+Category
+
+Description
+
+Experience
+
+Visual effect
+
+Sound level
+
+Duration
+
+Pack size
+
+Price
+
+MRP
+
+Discount
+
+Stock
+
+Safety information
+
+Quantity selector
+
+Add to Cart
+
+Order Now
+
+Related products
+
+------------------------------------------------------------
+9.1 QUANTITY CONTROL
+------------------------------------------------------------
+
+Use:
+
+[-] 1 [+]
+
+Quantity cannot exceed available stock.
+
+If stock is:
+
+0
+
+show:
+
+OUT OF STOCK
+
+Disable Add to Cart.
+
+If stock is low:
+
+"Only 4 left"
+
+Do not reveal exact inventory if the business owner doesn't want customers to see it. Make this configurable.
+
+============================================================
+PART 10 — CART
+============================================================
+
+The cart must be fully functional.
+
+Customer can:
+
+Add
+
+Remove
+
+Increase quantity
+
+Decrease quantity
+
+Clear cart
+
+Continue shopping
+
+Proceed to checkout
+
+Cart should persist while navigating through the website.
+
+Display:
+
+Product
+
+Image
+
+Quantity
+
+Unit price
+
+Subtotal
+
+Discount
+
+Total
+
+Example:
+
+YOUR CELEBRATION
+
+Flower Pot × 2
+₹900
+
+Sparklers × 5
+₹600
+
+Family Combo × 1
+₹999
+
+Subtotal
+₹2,499
+
+Discount
+₹200
+
+Delivery
+To be confirmed
+
+TOTAL
+₹2,299
+
+Button:
+
+"Continue to Checkout"
+
+============================================================
+PART 11 — CHECKOUT
+============================================================
+
+Keep checkout extremely simple.
+
+Do NOT require customers to create an account.
+
+Collect:
+
+Full Name
+
+Mobile Number
+
+WhatsApp Number
+
+Delivery or Pickup
+
+Address
+
+Area
+
+City
+
+Pincode
+
+Optional note
+
+Required confirmation checkbox:
+
+"I confirm that the information provided is correct."
+
+Button:
+
+"Review Order"
+
+============================================================
+PART 12 — ORDER REVIEW
+============================================================
+
+Before submitting the order, show a complete summary.
+
+Customer:
+
+Name
+
+Phone
+
+WhatsApp
+
+Delivery method
+
+Address
+
+Products
+
+Quantity
+
+Price
+
+Subtotal
+
+Discount
+
+Delivery charge
+
+Final total
+
+Button:
+
+"SEND ORDER ON WHATSAPP"
+
+Important text:
+
+"Your order will be sent to us on WhatsApp for availability confirmation. Payment is not made at this step."
+
+============================================================
+PART 13 — ORDER CREATION
+============================================================
+
+When the customer submits the order:
+
+Generate a unique order ID.
+
+Format:
+
+DV-2026-00001
+
+DV-2026-00002
+
+DV-2026-00003
+
+Do not generate duplicate IDs.
+
+Create an actual order record.
+
+Save:
+
+Order ID
+
+Customer
+
+Customer phone
+
+WhatsApp number
+
+Address
+
+Delivery method
+
+Products
+
+Quantities
+
+Prices at time of order
+
+Subtotal
+
+Discount
+
+Delivery charge
+
+Total
+
+Payment status
+
+Order status
+
+Timestamp
+
+Admin notes
+
+============================================================
+PART 14 — WHATSAPP ORDER
+============================================================
+
+Generate the WhatsApp message dynamically.
+
+Never hardcode product information.
+
+The WhatsApp message must contain the complete order.
+
+Example:
+
+🪔 DEEPAVALI ORDER
+
+Order ID:
+DV-2026-00001
+
+CUSTOMER
+
+Name:
+Rahul Kumar
+
+Mobile:
+9876543210
+
+WhatsApp:
+9876543210
+
+DELIVERY
+
+Home Delivery
+
+Address:
+Example address
+
+ITEMS
+
+1. Deluxe Flower Pot
+Qty: 2
+₹450 × 2 = ₹900
+
+2. Electric Sparklers
+Qty: 5
+₹120 × 5 = ₹600
+
+ORDER SUMMARY
+
+Subtotal: ₹1,500
+
+Discount: ₹100
+
+Delivery: To be confirmed
+
+TOTAL: ₹1,400
+
+Payment Status:
+PENDING
+
+Order Status:
+AWAITING CONFIRMATION
+
+The business WhatsApp number must come from business settings.
+
+Do not hardcode the WhatsApp number throughout the application.
+
+============================================================
+PART 15 — AFTER WHATSAPP
+============================================================
+
+After the WhatsApp action:
+
+Show:
+
+"Order Request Sent"
+
+Order ID
+
+DV-2026-00001
+
+Message:
+
+"We've received your order request. We'll review availability and contact you on WhatsApp with payment instructions."
+
+Buttons:
+
+View Order
+
+Continue Shopping
+
+Contact Us
+
+============================================================
+PART 16 — ORDER TRACKING
+============================================================
+
+Create a customer order tracking page.
+
+Customer enters:
+
+Order ID
+
+Mobile number
+
+Then display:
+
+ORDER RECEIVED
+✓
+
+UNDER REVIEW
+✓
+
+ORDER APPROVED
+✓
+
+PAYMENT REQUESTED
+○
+
+PAYMENT RECEIVED
+○
+
+ORDER CONFIRMED
+○
+
+PACKING
+○
+
+READY
+○
+
+DELIVERED
+○
+
+The status must come from the order database.
+
+============================================================
+PART 17 — ADMIN SYSTEM
+============================================================
+
+Create a completely separate admin interface.
+
+Admin URL:
+
+/admin
+
+Require authentication.
+
+Never expose admin information publicly.
+
+Sidebar:
+
+Dashboard
+
+Orders
+
+Products
+
+Inventory
+
+Customers
+
+Payments
+
+Reports
+
+Settings
+
+============================================================
+PART 18 — ADMIN DASHBOARD
+============================================================
+
+Dashboard cards:
+
+Today's Orders
+
+Pending Orders
+
+Orders Awaiting Payment
+
+Confirmed Orders
+
+Today's Sales
+
+Total Products
+
+Low Stock
+
+Out of Stock
+
+These values must come from actual stored data.
+
+Do not hardcode dashboard numbers.
+
+============================================================
+PART 19 — ADMIN ORDER MANAGEMENT
+============================================================
+
+Admin sees all orders.
+
+Table:
+
+Order ID
+
+Customer
+
+Items
+
+Total
+
+Payment Status
+
+Order Status
+
+Created Time
+
+Actions
+
+Admin can open an order.
+
+Order detail page:
+
+Customer details
+
+Contact details
+
+Address
+
+Items
+
+Prices
+
+Quantities
+
+Subtotal
+
+Discount
+
+Delivery
+
+Total
+
+Payment status
+
+Order status
+
+Timeline
+
+Notes
+
+Actions:
+
+Approve
+
+Reject
+
+Request Payment
+
+Mark Payment Received
+
+Confirm
+
+Packing
+
+Ready
+
+Delivered
+
+Cancel
+
+Refund
+
+============================================================
+PART 20 — INVENTORY SYSTEM
+============================================================
+
+Create a real inventory system.
+
+Each product has:
+
+Current Stock
+
+Reserved Stock
+
+Available Stock
+
+Low Stock Threshold
+
+Stock Status
+
+Example:
+
+Current Stock:
+100
+
+Reserved:
+20
+
+Available:
+80
+
+Low Stock Threshold:
+10
+
+Status:
+IN STOCK
+
+============================================================
+PART 21 — INVENTORY LOGIC
+============================================================
+
+IMPORTANT:
+
+Adding a product to cart must NOT permanently reduce stock.
+
+When an order is created:
+
+Reserve inventory.
+
+Example:
+
+Stock:
+50
+
+Order:
+10
+
+Result:
+
+Stock: 50
+
+Reserved: 10
+
+Available: 40
+
+If order is rejected/cancelled:
+
+Release reservation.
+
+Stock:
+50
+
+Reserved:
+0
+
+Available:
+50
+
+If order is confirmed:
+
+Deduct stock.
+
+Stock:
+40
+
+Reserved:
+0
+
+Available:
+40
+
+Prevent overselling.
+
+The server/database must perform the final stock validation.
+
+Do not trust browser-side stock values.
+
+============================================================
+PART 22 — STOCK HISTORY
+============================================================
+
+Create stock transaction history.
+
+Examples:
+
+Initial Stock
+
+Stock Added
+
+Order Reserved
+
+Order Confirmed
+
+Order Cancelled
+
+Manual Adjustment
+
+Stock Returned
+
+Admin must be able to see why inventory changed.
+
+============================================================
+PART 23 — PRODUCT MANAGEMENT
+============================================================
+
+Admin can create products.
+
+Fields:
+
+Product Name
+
+Product Code
+
+Category
+
+Description
+
+Experience Description
+
+Visual Effect
+
+Sound Level
+
+Duration
+
+Pack Size
+
+MRP
+
+Selling Price
+
+Discount
+
+Stock
+
+Low Stock Threshold
+
+Images
+
+Video
+
+Safety Information
+
+Active/Inactive
+
+Save
+
+Products created by admin should immediately appear on the customer website.
+
+============================================================
+PART 24 — CUSTOMER MANAGEMENT
+============================================================
+
+Admin can see customers.
+
+Display:
+
+Name
+
+Phone
+
+WhatsApp
+
+Number of Orders
+
+Total Order Value
+
+Last Order
+
+Order History
+
+Do not expose this information publicly.
+
+============================================================
+PART 25 — PAYMENT WORKFLOW
+============================================================
+
+For the initial version, implement payment as a controlled workflow.
+
+Statuses:
+
+PAYMENT PENDING
+
+PAYMENT REQUESTED
+
+PAYMENT SUBMITTED
+
+PAYMENT VERIFIED
+
+PAYMENT FAILED
+
+REFUNDED
+
+Admin can approve an order and request payment.
+
+Customer then sees:
+
+PAYMENT REQUIRED
+
+Amount:
+
+₹1,400
+
+Payment QR
+
+UPI ID
+
+Payment instructions
+
+"Payment Completed"
+
+For demo mode, the admin can manually mark payment as verified.
+
+IMPORTANT:
+
+Never claim that a payment is successful simply because a customer clicks "Payment Completed."
+
+For production, the payment status must eventually come from a verified payment gateway/webhook or be manually verified by the business.
+
+============================================================
+PART 26 — BUSINESS SETTINGS
+============================================================
+
+Create:
+
+ADMIN → SETTINGS
+
+Fields:
+
+Business Name
+
+Logo
+
+WhatsApp Number
+
+Phone Number
+
+UPI ID
+
+Payment QR
+
+Business Address
+
+Delivery Areas
+
+Delivery Charge
+
+Pickup Availability
+
+Business Hours
+
+Low Stock Default
+
+Terms
+
+Privacy Policy
+
+Safety Information
+
+Cancellation Policy
+
+All customer-facing information should use these settings.
+
+Do not hardcode business information in multiple components.
+
+============================================================
+PART 27 — REAL-TIME DATA
+============================================================
+
+Prepare the architecture for realtime updates.
+
+When a customer places an order:
+
+Admin dashboard should receive/update the order.
+
+When admin updates order status:
+
+Customer tracking should update.
+
+When inventory changes:
+
+Product availability should update.
+
+When price changes:
+
+Catalogue should reflect the new price.
+
+Use realtime subscriptions where supported.
+
+============================================================
+PART 28 — DATABASE
+============================================================
+
+Design a proper relational database.
+
+Tables:
+
+categories
+
+products
+
+product_media
+
+customers
+
+orders
+
+order_items
+
+inventory
+
+stock_transactions
+
+payments
+
+order_status_history
+
+admin_users
+
+business_settings
+
+Create proper relationships.
+
+Orders must reference customers.
+
+Order items must reference orders and products.
+
+Payments must reference orders.
+
+Inventory must reference products.
+
+Stock transactions must reference inventory/products and, where relevant, orders.
+
+============================================================
+PART 29 — IMPORTANT PRICE RULE
+============================================================
+
+When an order is created, save the actual price at that moment inside order_items.
+
+Do not calculate historical order totals using the current product price.
+
+Example:
+
+Product price today:
+₹450
+
+Customer orders.
+
+Later admin changes product price to:
+₹500
+
+The old order must still show:
+₹450
+
+============================================================
+PART 30 — SECURITY
+============================================================
+
+The website is intended for real customers.
+
+Do not expose:
+
+Database service keys
+
+Payment secret keys
+
+WhatsApp API secrets
+
+Admin credentials
+
+Private customer information
+
+All secret keys must remain server-side/environment variables.
+
+Protect admin routes.
+
+Validate customer input.
+
+Validate quantities.
+
+Validate product IDs.
+
+Validate stock.
+
+Validate prices server-side.
+
+Do not trust values sent from the browser.
+
+============================================================
+PART 31 — MOBILE-FIRST
+============================================================
+
+The website must be excellent on mobile.
+
+Test:
+
+360px
+
+390px
+
+412px
+
+768px
+
+1024px
+
+Desktop
+
+Mobile must not feel like a compressed desktop site.
+
+Use:
+
+Large buttons
+
+Sticky cart
+
+Clear prices
+
+Easy quantity controls
+
+Short forms
+
+Fast navigation
+
+Easy WhatsApp ordering
+
+============================================================
+PART 32 — CUSTOMER ENGAGEMENT
+============================================================
+
+Use engagement features that directly help sales.
+
+Examples:
+
+"Popular This Week"
+
+"Complete Your Celebration"
+
+"You May Also Like"
+
+"Perfect With This"
+
+"Family Favourites"
+
+"Best Value Combo"
+
+"Under ₹500"
+
+"Build Your Celebration"
+
+Recently viewed products
+
+Related products
+
+Do not spam the customer.
+
+Do not use fake urgency such as:
+
+"Only 2 left!"
+
+unless actual inventory is genuinely 2.
+
+============================================================
+PART 33 — SEARCH EXPERIENCE
+============================================================
+
+Search must be fast.
+
+Customer can search:
+
+Flower Pot
+
+Rocket
+
+Sparklers
+
+Chakra
+
+Combo
+
+Product name
+
+Category
+
+Show useful empty state:
+
+"No crackers found."
+
+Then recommend categories.
+
+============================================================
+PART 34 — FILTER EXPERIENCE
+============================================================
+
+Useful filters:
+
+Category
+
+Price
+
+Experience
+
+Sound level
+
+Duration
+
+Pack size
+
+Availability
+
+Only display filters that have meaningful data.
+
+============================================================
+PART 35 — LOADING / ERROR STATES
+============================================================
+
+Every asynchronous action must have proper UI.
+
+Examples:
+
+Loading products
+
+Adding to cart
+
+Creating order
+
+Sending WhatsApp order
+
+Loading order
+
+Admin updating stock
+
+Admin updating payment
+
+Use clear loading indicators.
+
+If something fails:
+
+Show a useful message.
+
+Never silently fail.
+
+============================================================
+PART 36 — DEMO DATA
+============================================================
+
+For the first preview, create:
+
+30 products
+
+8 categories
+
+10 customers
+
+15 orders
+
+Different order statuses
+
+Different payment statuses
+
+Low-stock products
+
+Out-of-stock products
+
+Several combo packs
+
+Use realistic Indian product names and prices.
+
+Do not use nonsense names.
+
+============================================================
+PART 37 — DEMO MODE
+============================================================
+
+Clearly separate DEMO MODE from production.
+
+Demo mode may simulate:
+
+Payment verification
+
+Order status changes
+
+Inventory
+
+Customer data
+
+But the UI and architecture should resemble the eventual production system.
+
+Do not fake a real bank/payment confirmation.
+
+============================================================
+PART 38 — ANALYTICS
+============================================================
+
+Create a basic admin analytics section.
+
+Show:
+
+Total Orders
+
+Sales
+
+Average Order Value
+
+Top Products
+
+Top Categories
+
+Pending Orders
+
+Pending Payments
+
+Cancelled Orders
+
+Low Stock Products
+
+Use charts only where they genuinely help.
+
+Do not overload the dashboard with unnecessary graphs.
+
+============================================================
+PART 39 — CUSTOMER ORDER FLOW
+============================================================
+
+The complete customer flow must be:
+
+1. Customer lands on homepage.
+
+2. Customer sees attractive Deepavali visual.
+
+3. Customer explores categories.
+
+4. Customer opens a product.
+
+5. Customer understands the product experience.
+
+6. Customer sees price and pack size.
+
+7. Customer adds product.
+
+8. Customer continues shopping.
+
+9. Customer opens cart.
+
+10. Customer sees complete price breakdown.
+
+11. Customer proceeds to checkout.
+
+12. Customer enters name and contact details.
+
+13. Customer chooses delivery or pickup.
+
+14. Customer reviews order.
+
+15. Customer clicks "Send Order on WhatsApp."
+
+16. System creates order ID.
+
+17. System saves order.
+
+18. System generates WhatsApp message.
+
+19. WhatsApp opens with complete order information.
+
+20. Customer sends the message.
+
+21. Confirmation page appears.
+
+22. Customer can track the order.
+
+============================================================
+PART 40 — ADMIN FLOW
+============================================================
+
+Admin flow:
+
+1. Admin logs in.
+
+2. Dashboard opens.
+
+3. New order appears.
+
+4. Admin opens order.
+
+5. Admin reviews products and customer information.
+
+6. Admin checks inventory.
+
+7. Admin approves or rejects.
+
+8. If approved, admin requests payment.
+
+9. Customer receives payment instructions.
+
+10. Customer pays.
+
+11. Payment is verified.
+
+12. Admin marks payment verified.
+
+13. Order becomes confirmed.
+
+14. Inventory is updated.
+
+15. Admin packs order.
+
+16. Admin marks ready.
+
+17. Delivery/pickup occurs.
+
+18. Admin marks delivered/completed.
+
+19. Customer tracking updates.
+
+============================================================
+PART 41 — PRODUCTION ARCHITECTURE
+============================================================
+
+Build the application so the demo can later become a production system.
+
+Recommended architecture:
+
+Frontend:
+Next.js / React
+
+Backend:
+Server-side API / server actions
+
+Database:
+Supabase PostgreSQL
+
+Authentication:
+Supabase Auth
+
+Storage:
+Supabase Storage
+
+Realtime:
+Supabase Realtime
+
+Payments:
+Production payment gateway
+
+WhatsApp:
+WhatsApp Business Platform/API
+
+Deployment:
+Production hosting such as Vercel
+
+Do not put secret credentials in frontend code.
+
+============================================================
+PART 42 — COMPONENT ORGANIZATION
+============================================================
+
+Use reusable components.
+
+Examples:
+
+Header
+
+MobileNavigation
+
+Hero
+
+CategoryCard
+
+ProductCard
+
+ProductGallery
+
+ExperienceBadge
+
+QuantitySelector
+
+CartDrawer
+
+CartItem
+
+CheckoutForm
+
+OrderSummary
+
+WhatsAppOrderButton
+
+OrderTracking
+
+AdminSidebar
+
+DashboardCard
+
+OrderTable
+
+OrderDetails
+
+InventoryTable
+
+ProductEditor
+
+PaymentPanel
+
+SettingsPanel
+
+============================================================
+PART 43 — IMPORTANT DEVELOPMENT RULE
+============================================================
+
+Do not rewrite the entire application unnecessarily.
+
+If an existing component already works:
+
+Keep it.
+
+Improve it.
+
+Connect it to the correct data source.
+
+Do not destroy existing customer UX simply to change architecture.
+
+Before making major changes, inspect the existing project.
+
+Identify:
+
+- current routes
+- current components
+- current services
+- current state management
+- current data models
+- current local storage
+- current mock data
+- current WhatsApp implementation
+- current admin implementation
+
+Then migrate systematically.
+
+============================================================
+PART 44 — NO DEAD BUTTONS
+============================================================
+
+Every visible CTA must have a purpose.
+
+Examples:
+
+Shop Now → Shop
+
+View Category → Category
+
+Add to Cart → Cart state update
+
+View Cart → Cart
+
+Checkout → Checkout
+
+Send Order → Create order + WhatsApp
+
+Track Order → Tracking
+
+Admin buttons → Real admin actions
+
+If a feature cannot be implemented yet, clearly mark it as demo functionality rather than pretending it is real.
+
+============================================================
+PART 45 — SALES OPTIMIZATION
+============================================================
+
+The website should optimize for customer conversion without becoming manipulative.
+
+Prioritize:
+
+Product discovery
+
+Product understanding
+
+Clear prices
+
+Simple cart
+
+Simple checkout
+
+WhatsApp ordering
+
+Best sellers
+
+Combos
+
+Related products
+
+Clear product experience
+
+Trust
+
+Mobile usability
+
+Do not force customers through unnecessary registration.
+
+Do not use dark patterns.
+
+Do not hide the final price.
+
+Do not add fake scarcity.
+
+============================================================
+PART 46 — FINAL VISUAL QUALITY
+============================================================
+
+Before completing the build, inspect every page.
+
+The site should feel like a premium seasonal retail store.
+
+Check:
+
+Spacing
+
+Typography
+
+Image quality
+
+Button hierarchy
+
+Mobile layout
+
+Product card consistency
+
+Cart usability
+
+Checkout clarity
+
+Navigation
+
+Loading states
+
+Empty states
+
+Error states
+
+Admin usability
+
+Do not stop when the page "looks good."
+
+Test the complete flow.
+
+============================================================
+PART 47 — FINAL FUNCTIONAL TEST
+============================================================
+
+Test this exact scenario:
+
+CUSTOMER
+
+Open homepage
+
+→ Explore Flower Pots
+
+→ Open product
+
+→ View experience
+
+→ Add 2
+
+→ Continue shopping
+
+→ Add 3 Sparklers
+
+→ Open cart
+
+→ Change quantity
+
+→ Check total
+
+→ Checkout
+
+→ Enter customer details
+
+→ Select delivery
+
+→ Review
+
+→ Create order
+
+→ Generate order ID
+
+→ Generate WhatsApp message
+
+→ Open WhatsApp
+
+→ Confirmation page
+
+→ Track order
+
+ADMIN
+
+Login
+
+→ Dashboard
+
+→ New order
+
+→ Open order
+
+→ Check stock
+
+→ Approve
+
+→ Request payment
+
+→ Payment status changes
+
+→ Verify payment
+
+→ Confirm order
+
+→ Inventory updates
+
+→ Mark packed
+
+→ Mark ready
+
+→ Mark delivered
+
+CUSTOMER
+
+Refresh/open tracking
+
+→ See updated order status
+
+All major interactions must work.
+
+============================================================
+FINAL REQUIREMENT
+============================================================
+
+Do not optimize this project for impressing a developer.
+
+Optimize it for a real customer.
+
+A customer should be able to open the website on their phone, understand the products within seconds, enjoy exploring them, add what they want, clearly see the total, and send the complete order to the business through WhatsApp with minimal effort.
+
+The website should make the customer think:
+
+"I know what this product does."
+
+"I know how much it costs."
+
+"I can easily add it."
+
+"I can easily order it."
+
+"I trust this business."
+
+The website should make the business owner think:
+
+"I can see exactly what customers ordered."
+
+"I know what stock I have."
+
+"I know which orders need attention."
+
+"I can manage the entire order process."
+
+Build this as the foundation of a real Deepavali crackers business, not merely a visual demonstration.

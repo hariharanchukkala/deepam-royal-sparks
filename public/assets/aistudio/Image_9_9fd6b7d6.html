@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deepam Royal Sparks — Confirm &amp; WhatsApp Order</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#fbeee7",
+            "inverse-surface": "#362f2b",
+            "surface-variant": "#ece0d9",
+            "primary-container": "#661023",
+            "on-error": "#ffffff",
+            "outline-variant": "#dbc0c1",
+            "on-tertiary-container": "#7ca48b",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#133a27",
+            "on-surface": "#201a16",
+            "inverse-primary": "#ffb2b9",
+            "surface-container-highest": "#ece0d9",
+            "on-surface-variant": "#554243",
+            "on-secondary-container": "#735700",
+            "on-secondary": "#ffffff",
+            "secondary": "#775a00",
+            "error": "#ba1a1a",
+            "surface-container": "#f8ebe5",
+            "tertiary-fixed": "#c2edd0",
+            "on-tertiary-fixed-variant": "#284e3a",
+            "surface-dim": "#e4d8d1",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#450011",
+            "tertiary": "#002414",
+            "on-secondary-fixed": "#251a00",
+            "on-primary-fixed": "#40000f",
+            "primary-fixed": "#ffdadc",
+            "surface-container-low": "#fef1ea",
+            "on-tertiary-fixed": "#002112",
+            "secondary-container": "#fece57",
+            "surface-tint": "#a03d4c",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#ec7886",
+            "background": "#fff8f5",
+            "on-background": "#201a16",
+            "surface": "#fff8f5",
+            "on-primary-fixed-variant": "#812535",
+            "error-container": "#ffdad6",
+            "secondary-fixed-dim": "#eec14b",
+            "on-secondary-fixed-variant": "#5a4300",
+            "primary-fixed-dim": "#ffb2b9",
+            "outline": "#887173",
+            "tertiary-fixed-dim": "#a6d0b5",
+            "surface-container-high": "#f2e6df",
+            "secondary-fixed": "#ffdf98",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fff8f5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "3rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+    }
+    .custom-parchment-pattern {
+      background-color: #fff8f5;
+      background-image: radial-gradient(#dbc0c1 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+    }
+    .gold-foil-edge {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 2px 8px -2px rgba(102, 16, 35, 0.08);
+    }
+    .chat-bubble-tail::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: -8px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 10px solid #f8ebe5;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="custom-parchment-pattern text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed min-h-screen flex flex-col justify-between">
+<!-- Mobile Container Wrapper (< 640px viewport lock with max-w-md) -->
+<div class="w-full max-w-md mx-auto flex flex-col min-h-screen bg-surface shadow-2xl relative pb-36">
+<!-- Top Navigation Bar: Focused Sub-journey / Linear Step (Bottom Nav Suppressed as per Destination Rule) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin py-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full flex items-center justify-center text-primary-container hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary-container leading-tight">
+            Your Festive Hamper
+          </h1>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary flex items-center gap-1 font-bold mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container inline-block"></span>
+            Step 2 of 2: Confirm &amp; WhatsApp
+          </p>
+</div>
+</div>
+<!-- Trust Seal Minimal Indicator -->
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/40" title="PESO Verified Green Packaging">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin py-space-sm flex flex-col gap-space-md">
+<!-- Royal Assurance Banner -->
+<section class="bg-surface-container-high rounded-xl p-space-sm border border-outline-variant/30 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-primary-container font-semibold">Direct Sivakasi Safe Freight</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">PESO Certified HazMat van delivery with zero-friction inspection.</p>
+</div>
+</section>
+<!-- Section: Order Items Summary List -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline-sm text-[17px] font-semibold text-primary">Ceremonial Fireworks (3 Items)</h2>
+<span class="font-label-sm text-label-sm text-secondary font-bold">100% Green Formulations</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 divide-y divide-outline-variant/20 gold-foil-edge overflow-hidden">
+<!-- Item 1 -->
+<article class="p-space-sm flex items-center justify-between gap-3">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/30 shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Luxurious golden Diwali firework aerial packaging cylinder box with ornate embossed Indian Mughal gold filigree on deep maroon background with celebratory sparkles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOgB7rS2Obf7JNe0uUmL3jSMdZPgFd2C_3hsr-_PAoezuXrS_ADeaTSlPyVOA1qIIQNCUEkzRZhP2gbnWJm90rp4Rr3RO9uStE7jkU8IfCsk7NQYJekcpDkIhqPDnm2CaTrEvCzxRgOu3XbyAk0kIYdeDorW16mJ0aaVwAhzTucXZvzUdcCT_ZL9tydBle-iUnDtsoAeMOr4Fyqz95rhSf48u1qpY8tuMUeTWhxT0zRVap5kwXiE0"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-white text-[9px] font-mono px-1 rounded-tl-sm">x1</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Maharaja 50-Shot Gold Willow</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">120 ft High Canopy • Low Smoke Profile</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-body-md text-body-md font-bold text-primary-container">₹2,850</span>
+<p class="font-label-sm text-label-sm text-outline">Qty: 1</p>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="p-space-sm flex items-center justify-between gap-3">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/30 shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Exquisite handmade silver sparkling conical pyrotechnic fountain pack with authentic royal crest stamp against a warm creamy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQwjT9z8EKNWiK5M3EJgNFJuyoUj8c0dgnTp4OoalLJoyO954qHUbZ2ifrL_r68ydaUXMjs8Tyi7VUaDtyyn4ybT8v8jSAek3aHM3G3YuX-w9Xt-lLCue56dM8r8M9H4PZxmXwFX1a9b4xWnaXgFtco-cOJGclenB3zP-ZYIX40cwrFCIuj_GZeWuzms5Yqbe6BRLjeg5E9JgxhfKPhinqb10MpJ8XCWDFeOfk2-w82LTghf6UUAM"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-white text-[9px] font-mono px-1 rounded-tl-sm">x2</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">flare</span>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Sahasra Silver Fountain (5-pack)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">45s Continuous Glow • 85 dB Acoustic</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-body-md text-body-md font-bold text-primary-container">₹1,360</span>
+<p class="font-label-sm text-label-sm text-outline">Qty: 2</p>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="p-space-sm flex items-center justify-between gap-3">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/30 shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Artisanal long 75cm festive hand sparklers in vintage velvet-textured royal packaging with delicate golden foil accents and smoke-free guarantee seal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW-KQPl1tx-vWOBuePfSx_h3yIr2n6KPayjcJpoKYmJVUvzhMVmp-Sgwr_jhinRxd5UFY_2MuUQcrbiMVa8dkwlyxjgTkY9NTeNBna8enNUKtbBU2L_iEPRr8zjjNwfkzAvs_LNQA7I6Nw56C1oguB6ct79JB8x1OzG1AwBoZ6YtV5y77dvTjoSvdCbKPOPXi_ChHKorst6I-kSSsO6K9_3DgXjKXYMc3Mc3dIS1vUN1LuPz_bMJ8"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-white text-[9px] font-mono px-1 rounded-tl-sm">x2</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[14px]">auto_awesome</span>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Shimmering Hand Sparklers 75cm</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cold Spark Safe • Nitrate Free</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-body-md text-body-md font-bold text-primary-container">₹840</span>
+<p class="font-label-sm text-label-sm text-outline">Qty: 2</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Section: Delivery & Customer Details Card -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant/40 p-space-md flex flex-col gap-space-sm gold-foil-edge">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">person_pin_circle</span>
+<h2 class="font-headline-sm text-[16px] font-semibold text-primary-container">Recipient &amp; Delivery Node</h2>
+</div>
+<button class="font-label-md text-label-md text-secondary font-semibold hover:underline" type="button">Edit</button>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant">Consignee</span>
+<div class="text-right">
+<p class="font-body-md text-body-md font-semibold text-on-surface">Aditya Sharma</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">+91 98765 43210</p>
+</div>
+</div>
+<div class="flex items-start justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant">Destination</span>
+<p class="font-body-sm text-body-sm text-on-surface text-right max-w-[210px] leading-relaxed">
+              Flat 402, Royal Palms, Indiranagar, Bengaluru - 560038
+            </p>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant">Scheduled Slot</span>
+<div class="flex items-center gap-1.5 text-right">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<p class="font-label-md text-label-md font-bold text-tertiary-container">Oct 28 • Express Van</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Itemized Bill Breakdown -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-space-md gold-foil-edge">
+<h2 class="font-headline-sm text-[16px] font-semibold text-primary pb-space-xs border-b border-outline-variant/20 mb-space-sm flex items-center justify-between">
+<span>Billing Summary</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">Taxes Included</span>
+</h2>
+<div class="space-y-2 font-body-sm text-body-sm text-on-surface">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Item Subtotal</span>
+<span class="font-medium">₹5,050</span>
+</div>
+<div class="flex justify-between items-center text-primary-container">
+<span class="flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">sell</span>
+              Festive Royal Privilege (DIWALI24)
+            </span>
+<span class="font-semibold">-₹500</span>
+</div>
+<div class="flex justify-between items-center text-tertiary-container">
+<span class="flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+              Safe Wooden Crate Packing
+            </span>
+<span class="font-bold tracking-wider text-[11px] uppercase bg-tertiary-fixed px-1.5 py-0.5 rounded text-tertiary">FREE</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Dedicated Insured Transit</span>
+<span class="font-medium">₹150</span>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/40 flex justify-between items-baseline mt-space-sm">
+<div>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">Final Payable</span>
+<p class="font-label-sm text-label-sm text-outline">Settlement via WhatsApp UPI / CoD</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight">₹4,700</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Dynamic WhatsApp Order Dispatch Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/50 p-space-md relative overflow-hidden gold-foil-edge">
+<!-- Watermark / Background subtle crest -->
+<div class="absolute -right-6 -bottom-6 opacity-5 pointer-events-none text-primary-container">
+<span class="material-symbols-outlined text-[120px]">stars</span>
+</div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-emerald-600 animate-ping"></div>
+<h2 class="font-label-lg text-label-lg text-primary-container font-bold uppercase tracking-wider">
+              Instant 1-Tap WhatsApp Checkout
+            </h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">sync_saved_locally</span> Pre-formatted
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          The verified merchant dispatch bot will automatically generate and send your official invoice order payload:
+        </p>
+<!-- Monospace / Chat Bubble Live Preview Container -->
+<div class="relative bg-surface-container-high rounded-lg p-3 border border-outline-variant/40 font-mono text-[11.5px] leading-relaxed text-[#201a16] shadow-inner select-none chat-bubble-tail">
+<div class="flex items-center justify-between pb-1.5 mb-2 border-b border-outline-variant/30 text-[10px] text-on-surface-variant font-sans">
+<span class="flex items-center gap-1 text-[#128C7E] font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span> End-to-End Encrypted Payload
+            </span>
+<span class="font-mono">11:42 AM</span>
+</div>
+<div class="space-y-1 text-on-surface">
+<p class="font-bold text-primary-container">🎆 *NEW ORDER - DEEPAM SPARKS* 🎆</p>
+<p><span class="font-bold">*Order ID:*</span> #DSP-8921</p>
+<p><span class="font-bold">*Customer:*</span> Aditya Sharma (+91 98765 43210)</p>
+<p class="pt-1 font-bold text-secondary">*Items:*</p>
+<p class="pl-2.5">• Maharaja 50-Shot Willow x1 (₹2,850)</p>
+<p class="pl-2.5">• Sahasra Silver Fountain x2 (₹1,360)</p>
+<p class="pl-2.5">• Shimmering Sparklers x2 (₹840)</p>
+<p class="pt-1"><span class="font-bold">*Total Amount:*</span> <span class="font-bold text-primary-container">₹4,700</span></p>
+<p><span class="font-bold">*Address:*</span> Indiranagar, Bengaluru - 560038</p>
+<p class="pt-0.5 text-on-surface-variant"><span class="font-bold">*Payment Mode:*</span> UPI / Cash on Delivery on Inspection</p>
+</div>
+<div class="flex justify-end items-center gap-1 mt-2 text-[10px] text-tertiary-container font-sans font-medium">
+<span>Ready for 1-tap dispatch</span>
+<span class="material-symbols-outlined text-[13px] text-tertiary">done_all</span>
+</div>
+</div>
+<!-- Compliance & Dispatch Note -->
+<div class="mt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-1 font-label-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">security</span>
+            CSIR-NEERI Green QR Attached
+          </span>
+<span class="font-label-sm text-outline">Ref: DL-2024-KA</span>
+</div>
+</section>
+<!-- Institutional Verification Badge -->
+<footer class="pt-space-xs pb-space-sm flex flex-col items-center justify-center text-center gap-1">
+<div class="flex items-center gap-2 text-outline text-label-sm font-label-sm">
+<span>PESO Reg: A/E/HQ/KA/101/29</span>
+<span>•</span>
+<span>Sivakasi Ateliers Ltd</span>
+</div>
+<p class="text-[11px] text-on-surface-variant max-w-xs">
+          Handcrafted in accordance with the Supreme Court of India ceremonial green pyrotechnic protocols.
+        </p>
+</footer>
+</main>
+<!-- Sticky Bottom Luxury WhatsApp CTA Dock -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 py-space-sm px-margin">
+<div class="max-w-md mx-auto flex flex-col gap-2">
+<!-- Primary Dual-Tone Regal WhatsApp Button -->
+<button class="w-full min-h-[52px] bg-gradient-to-r from-[#128C7E] via-[#0d695e] to-primary-container text-on-primary rounded-lg px-space-md py-3 shadow-[0_8px_20px_-4px_rgba(18,140,126,0.35)] flex items-center justify-between active:scale-[0.98] transition-all duration-150 border border-secondary/40" onclick="dispatchOrder()" type="button">
+<div class="flex items-center gap-3">
+<!-- Custom authentic styled WhatsApp icon frame -->
+<div class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-white" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div class="text-left">
+<div class="font-label-lg text-label-lg font-bold text-white tracking-wide flex items-center gap-1.5">
+<span>Complete Order on WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+<p class="text-[11px] text-white/80 font-normal">Pre-filled cart manifest sent to Sivakasi Desk</p>
+</div>
+</div>
+<!-- Total Pill inside button -->
+<div class="bg-black/25 px-2.5 py-1 rounded text-right shrink-0 border border-white/20">
+<span class="font-body-md text-body-md font-bold text-white">₹4,700</span>
+</div>
+</button>
+<!-- Merchant Trust Meta Pill below button -->
+<div class="flex items-center justify-center gap-3 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-[#204632] font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+            Verified Merchant
+          </span>
+<span class="text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+            Direct Desk Support
+          </span>
+<span class="text-outline">•</span>
+<span>No Prepayment Obligation</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function dispatchOrder() {
+      const orderMessage = encodeURIComponent(
+        `🎆 *NEW ORDER - DEEPAM SPARKS* 🎆\n` +
+        `*Order ID:* #DSP-8921\n` +
+        `*Customer:* Aditya Sharma (+91 98765 43210)\n` +
+        `*Items:*\n` +
+        `• Maharaja 50-Shot Willow x1 (₹2,850)\n` +
+        `• Sahasra Silver Fountain x2 (₹1,360)\n` +
+        `• Shimmering Sparklers x2 (₹840)\n` +
+        `*Total Amount:* ₹4,700\n` +
+        `*Address:* Flat 402, Royal Palms, Indiranagar, Bengaluru - 560038\n` +
+        `*Payment Mode:* UPI / Cash on Delivery on Inspection`
+      );
+      // Simulated WhatsApp business API dispatch
+      window.open(`https://api.whatsapp.com/send?phone=919876543210&text=${orderMessage}`, '_blank');
+    }
+  </script>
+</body></html>
