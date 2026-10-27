@@ -200,8 +200,8 @@ export const CheckoutScreen: React.FC = () => {
         )}
       </header>
 
-      {/* Main Container */}
-      <main className="max-w-md mx-auto px-4 py-3 space-y-4">
+      {/* Main Container: Responsive across Mobile and Laptop */}
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         {cart.length === 0 ? (
           <div className="bg-white rounded-xl border border-dashed border-[#dbc0c1] p-8 text-center space-y-3">
             <span className="material-symbols-outlined text-[42px] text-[#887173]">
@@ -508,7 +508,7 @@ export const CheckoutScreen: React.FC = () => {
           </>
         ) : (
           /* Step 14: Order Review Screen */
-          <div className="space-y-4 text-xs">
+          <div className="max-w-3xl mx-auto space-y-4 text-xs">
             {/* Customer Details Summary */}
             <div className="bg-white p-4 rounded-xl border border-[#dbc0c1]/50 shadow-xs space-y-2">
               <h3 className="font-playfair text-sm font-bold text-[#450011] pb-1 border-b">

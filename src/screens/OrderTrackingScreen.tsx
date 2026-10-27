@@ -99,7 +99,7 @@ export const OrderTrackingScreen: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 pb-36 max-w-md mx-auto px-4 space-y-4">
+    <div className="pt-28 pb-36 w-full max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-6 space-y-5">
       {/* Title */}
       <div>
         <h2 className="font-playfair text-xl text-[#450011] font-bold">

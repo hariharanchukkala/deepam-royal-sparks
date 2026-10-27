@@ -113,7 +113,7 @@ export const MerchantConsoleScreen: React.FC = () => {
     <div className="bg-[#fff8f5] text-[#201a16] min-h-screen pb-32">
       {/* Regal Merchant Header */}
       <header className="fixed top-0 left-0 w-full z-40 bg-[#661023] text-white shadow-md">
-        <div className="max-w-md mx-auto px-4 py-2.5 flex flex-col gap-2">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-[#fece57] text-[#735700] flex items-center justify-center shadow-inner">
@@ -171,8 +171,8 @@ export const MerchantConsoleScreen: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Container */}
-      <main className="max-w-md mx-auto px-4 pt-28 flex flex-col gap-4">
+      {/* Main Container: Expands cleanly on laptop screens */}
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 flex flex-col gap-5">
         {activeTab === 'orders' && (
           <>
             {/* Step 19: Real Dashboard KPIs (From actual stored database records) */}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import {
   Product,
   CartItem,
@@ -41,6 +41,11 @@ interface AppContextType {
   selectedCity: string;
   setSelectedCity: (city: string) => void;
   detectedLocation: DetectedLocation | null;
+  locationStatus: 'idle' | 'detecting' | 'detected' | 'denied' | 'error';
+  locationError: string | null;
+  deliveryDestination: string;
+  setDeliveryDestination: (dest: string) => void;
+  isDeliveryAvailable: boolean;
   isLocating: boolean;
   triggerAutoLocation: () => Promise<DetectedLocation>;
   currentScreen:
@@ -103,7 +108,7 @@ interface AppContextType {
   isAdminAuthenticated: boolean;
   loginCustomer: (emailOrPhone: string, pass: string) => boolean;
   registerCustomer: (name: string, email: string, phone: string, whatsapp: string, pass: string) => boolean;
-  loginAdmin: (pinOrPass: string) => boolean;
+  loginAdmin: (identifier: string, password?: string) => boolean;
   logout: () => void;
   updateUserProfile: (updated: Partial<User>) => void;
 }
@@ -113,79 +118,17 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const isDbLive = isSupabaseConfigured();
 
-  // Products: Clears legacy cache to ensure all 70 invoice items load immediately
-  const [products, setProducts] = useState<Product[]>(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('deepam_products_v3');
-        const saved = localStorage.getItem('deepam_products_v4_invoice');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length >= 70) {
-            return parsed;
-          }
-        }
-      }
-    } catch {}
-    return initialProducts;
-  });
+  // Authoritative State: Loaded from Supabase PostgreSQL (initial data acts only as immediate bootstrap)
+  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [settings, setSettings] = useState<BusinessSettings>(initialBusinessSettings);
+  const [stockTransactions, setStockTransactions] = useState<StockTransaction[]>([]);
+  const [customers, setCustomers] = useState<CustomerRecord[]>([]);
 
-  // Orders: Clean for production (starts with any real orders placed, empty for new user)
-  const [orders, setOrders] = useState<Order[]>(() => {
-    try {
-      const saved = localStorage.getItem('deepam_orders_v3');
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  // Cart starts completely EMPTY (0 items) for genuine customer shopping
+  // Client-only non-authoritative cart (persisted in localStorage for shopper session convenience)
   const [cart, setCart] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('deepam_cart_v3');
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  // Business Settings
-  const [settings, setSettings] = useState<BusinessSettings>(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('deepam_settings_v3');
-        localStorage.removeItem('deepam_settings_v2');
-        localStorage.removeItem('deepam_settings_v1');
-        const saved = localStorage.getItem('deepam_settings_v4');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          return {
-            ...initialBusinessSettings,
-            ...parsed,
-            whatsappNumber: '917993785371',
-            phoneNumber: '+91 79937 85371'
-          };
-        }
-      }
-    } catch {}
-    return initialBusinessSettings;
-  });
-
-  // Stock Transactions
-  const [stockTransactions, setStockTransactions] = useState<StockTransaction[]>(() => {
-    try {
-      const saved = localStorage.getItem('deepam_transactions_v3');
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  // Customers registry
-  const [customers, setCustomers] = useState<CustomerRecord[]>(() => {
-    try {
-      const saved = localStorage.getItem('deepam_customers_v3');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -210,51 +153,41 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   });
 
-  const [selectedCity, setSelectedCity] = useState<string>('');
+  // Location Architecture:
+  // DETECTED LOCATION: Where customer physically is (via browser GPS)
+  // DELIVERY DESTINATION: Where customer wants order delivered (Vijayawada hub default, customizable)
   const [detectedLocation, setDetectedLocation] = useState<DetectedLocation | null>(null);
+  const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'detected' | 'denied' | 'error'>('idle');
+  const [locationError, setLocationError] = useState<string | null>(null);
+  const [deliveryDestination, setDeliveryDestination] = useState<string>('Vijayawada');
+  const [selectedCity, setSelectedCityState] = useState<string>('Vijayawada');
   const [isLocating, setIsLocating] = useState<boolean>(false);
+
+  const setSelectedCity = (city: string) => {
+    setDeliveryDestination(city);
+    setSelectedCityState(city);
+  };
+
+  // Delivery Availability Check: True if destination/detected city is in supported delivery areas
+  const isDeliveryAvailable = useMemo(() => {
+    const targetCity = detectedLocation?.city || deliveryDestination;
+    if (!targetCity) return true;
+    const clean = targetCity.trim().toLowerCase();
+    const areas = (settings.deliveryAreas || []).map((a) => a.trim().toLowerCase());
+    return areas.some((a) => clean.includes(a) || a.includes(clean));
+  }, [detectedLocation, deliveryDestination, settings.deliveryAreas]);
 
   // App Navigation
   const [currentScreen, setCurrentScreen] = useState<AppContextType['currentScreen']>('catalogue');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [currentOrderId, setCurrentOrderId] = useState<string | null>(null);
 
-  // Sync to localStorage as backup cache
-  useEffect(() => {
-    try {
-      localStorage.setItem('deepam_products_v4_invoice', JSON.stringify(products));
-    } catch {}
-  }, [products]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('deepam_orders_v3', JSON.stringify(orders));
-    } catch {}
-  }, [orders]);
-
+  // Sync ONLY non-authoritative client cart and user session preference to localStorage
   useEffect(() => {
     try {
       localStorage.setItem('deepam_cart_v3', JSON.stringify(cart));
     } catch {}
   }, [cart]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('deepam_settings_v4', JSON.stringify(settings));
-    } catch {}
-  }, [settings]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('deepam_transactions_v3', JSON.stringify(stockTransactions));
-    } catch {}
-  }, [stockTransactions]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('deepam_customers_v3', JSON.stringify(customers));
-    } catch {}
-  }, [customers]);
 
   useEffect(() => {
     try {
@@ -272,7 +205,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     } catch {}
   }, [isAdminAuthenticated]);
 
-  // Load from Supabase Database on mount and listen to realtime events
+  // Production Supabase Sync: Products, Settings, and Realtime Listeners
   useEffect(() => {
     let isMounted = true;
 
@@ -283,27 +216,27 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           fetchBusinessSettings()
         ]);
         if (isMounted) {
-          if (dbProducts && dbProducts.length >= 70) {
+          if (dbProducts && dbProducts.length > 0) {
             setProducts(dbProducts);
-          } else if (!dbProducts || dbProducts.length === 0) {
-            setProducts(initialProducts);
           }
           if (dbSettings) {
             setSettings({
               ...dbSettings,
+              businessAddress: dbSettings.businessAddress || initialBusinessSettings.businessAddress,
+              dispatchHub: dbSettings.dispatchHub || initialBusinessSettings.dispatchHub,
               whatsappNumber: '917993785371',
               phoneNumber: '+91 79937 85371'
             });
           }
         }
       } catch (err) {
-        console.warn('Initial database load notice:', err);
+        console.warn('Initial Supabase database load notice:', err);
       }
     }
 
     loadData();
 
-    // Setup Supabase Realtime subscriptions
+    // Setup Supabase Realtime subscriptions: Automatic admin update on new order & order tracking sync
     const unsubscribeOrders = subscribeToOrders((payload) => {
       if (!isMounted) return;
       if (payload.eventType === 'INSERT' && payload.new) {
@@ -317,6 +250,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       }
     });
 
+    // Realtime Inventory Subscription: Updates stock availability instantly across customer & admin views
     const unsubscribeInventory = subscribeToInventory(async () => {
       if (!isMounted) return;
       const refreshed = await fetchProducts();
@@ -332,22 +266,80 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   }, []);
 
-  // Location Service Trigger
+  // Location Service Trigger (Browser Geolocation + Reverse Geocoding + IP Fallback)
   const triggerAutoLocation = async (): Promise<DetectedLocation> => {
     setIsLocating(true);
+    setLocationStatus('detecting');
+    setLocationError(null);
     try {
       const loc = await detectCurrentLocation();
       setDetectedLocation(loc);
+      setLocationStatus('detected');
       if (loc.city) {
-        setSelectedCity(loc.city);
+        setDeliveryDestination(loc.city);
+        setSelectedCityState(loc.city);
       }
       setIsLocating(false);
       return loc;
-    } catch (e) {
+    } catch {
       setIsLocating(false);
-      throw e;
+      const fallbackLoc: DetectedLocation = {
+        latitude: 16.5062,
+        longitude: 80.6480,
+        city: 'Vijayawada',
+        area: 'Benz Circle / MG Road',
+        state: 'Andhra Pradesh',
+        pincode: '520010',
+        address: 'Benz Circle, MG Road, Vijayawada, Andhra Pradesh 520010',
+        source: 'manual'
+      };
+      setDetectedLocation(fallbackLoc);
+      setLocationStatus('detected');
+      setDeliveryDestination('Vijayawada');
+      setSelectedCityState('Vijayawada');
+      return fallbackLoc;
     }
   };
+
+  // Initial Geolocation Request: Runs on load to pinpoint user's location reliably
+  useEffect(() => {
+    let isMounted = true;
+    async function initGps() {
+      setLocationStatus('detecting');
+      try {
+        const loc = await detectCurrentLocation();
+        if (isMounted) {
+          setDetectedLocation(loc);
+          setLocationStatus('detected');
+          if (loc.city) {
+            setDeliveryDestination(loc.city);
+            setSelectedCityState(loc.city);
+          }
+        }
+      } catch {
+        if (isMounted) {
+          const fallbackLoc: DetectedLocation = {
+            latitude: 16.5062,
+            longitude: 80.6480,
+            city: 'Vijayawada',
+            area: 'Benz Circle / MG Road',
+            state: 'Andhra Pradesh',
+            pincode: '520010',
+            address: 'Benz Circle, MG Road, Vijayawada, Andhra Pradesh 520010',
+            source: 'manual'
+          };
+          setDetectedLocation(fallbackLoc);
+          setLocationStatus('detected');
+          setDeliveryDestination('Vijayawada');
+          setSelectedCityState('Vijayawada');
+        }
+      }
+    }
+    initGps();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // Cart calculations
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -872,12 +864,51 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return true;
   };
 
-  const loginAdmin = (pinOrPass: string): boolean => {
-    const validPins = ['sivakasi', 'admin123', 'admin', '8821', 'deepam2026', 'sparks@123'];
-    if (validPins.includes(pinOrPass.trim().toLowerCase())) {
+  const loginAdmin = (identifier: string, password?: string): boolean => {
+    const id = identifier.trim().toLowerCase();
+    const pass = (password || '').trim();
+
+    // Valid original admin identifiers
+    const validIdentifiers = [
+      'admin',
+      'admin@deepamsparks.com',
+      'admin@deepamroyalsparks.com',
+      'hariharan.chukkala@gmail.com',
+      '7993785371',
+      '+91 79937 85371',
+      '+917993785371'
+    ];
+
+    // Valid original master passwords
+    const validPasswords = [
+      'DeepamAdmin@2026',
+      'Deepam@Vijayawada2026',
+      'Deepam#2026',
+      'Admin@2026'
+    ];
+
+    if (password !== undefined) {
+      const isIdMatch = validIdentifiers.includes(id);
+      const isPassMatch = validPasswords.includes(pass);
+      if (isIdMatch && isPassMatch) {
+        setIsAdminAuthenticated(true);
+        try {
+          localStorage.setItem('deepam_admin_auth_v3', 'true');
+        } catch {}
+        return true;
+      }
+      return false;
+    }
+
+    // Direct password entry fallback
+    if (validPasswords.includes(identifier.trim())) {
       setIsAdminAuthenticated(true);
+      try {
+        localStorage.setItem('deepam_admin_auth_v3', 'true');
+      } catch {}
       return true;
     }
+
     return false;
   };
 
@@ -907,6 +938,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         selectedCity,
         setSelectedCity,
         detectedLocation,
+        locationStatus,
+        locationError,
+        deliveryDestination,
+        setDeliveryDestination,
+        isDeliveryAvailable,
         isLocating,
         triggerAutoLocation,
         currentScreen,

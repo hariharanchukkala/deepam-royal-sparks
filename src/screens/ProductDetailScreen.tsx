@@ -35,7 +35,7 @@ export const ProductDetailScreen: React.FC = () => {
     <div className="bg-[#fff8f5] text-[#201a16] min-h-screen pb-32">
       {/* Top Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#fff8f5]/90 backdrop-blur-md border-b border-[#dbc0c1]/40 shadow-xs">
-        <div className="max-w-md mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
           <button
             onClick={() => setCurrentScreen('catalogue')}
             aria-label="Go back"
@@ -59,7 +59,7 @@ export const ProductDetailScreen: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-md mx-auto pt-14 px-4 space-y-4">
+      <main className="w-full max-w-5xl mx-auto pt-16 px-4 sm:px-6 space-y-6">
         {/* Product Media Box */}
         <section className="mt-2 bg-white rounded-xl overflow-hidden shadow-xs border border-[#dbc0c1]/40">
           <div className="relative aspect-square w-full overflow-hidden bg-[#ece0d9]">

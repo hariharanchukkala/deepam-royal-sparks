@@ -10,7 +10,7 @@ export const BottomNav: React.FC = () => {
   }
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-40 bg-[#fff8f5]/95 backdrop-blur-md border-t border-[#dbc0c1]/40 shadow-[0_-4px_20px_rgba(102,10,35,0.06)]">
+    <nav className="fixed bottom-0 left-0 w-full z-40 bg-[#fff8f5]/95 backdrop-blur-md border-t border-[#dbc0c1]/40 shadow-[0_-4px_20px_rgba(102,10,35,0.06)] md:hidden">
       <div className="max-w-md mx-auto flex justify-around items-center px-2 py-1.5">
         {/* Tab 1: Catalogue */}
         <button

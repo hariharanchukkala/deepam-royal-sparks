@@ -49,7 +49,7 @@ export const HampersScreen: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 pb-36 max-w-md mx-auto px-4 space-y-4">
+    <div className="pt-28 pb-36 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
       <div>
         <div className="flex items-center gap-1.5 text-[#775a00]">
           <span className="material-symbols-outlined text-[18px]">stars</span>
@@ -57,15 +57,15 @@ export const HampersScreen: React.FC = () => {
             Complete Celebrations Bundled
           </span>
         </div>
-        <h2 className="font-playfair text-xl text-[#450011] font-bold">
+        <h2 className="font-playfair text-xl sm:text-2xl text-[#450011] font-bold">
           Celebration Combos & Hampers
         </h2>
-        <p className="text-xs text-[#554243]">
+        <p className="text-xs sm:text-sm text-[#554243]">
           Pre-assembled assortments of verified flower pots, sparklers, fountains and chakras with bundled savings.
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {combos.map((combo) => {
           const avail = checkComboAvailability(combo);
           const isAdded = !!addedCombo[combo.id];

@@ -11,9 +11,7 @@ import { OrderTrackingScreen } from './screens/OrderTrackingScreen';
 import { OrderConfirmationScreen } from './screens/OrderConfirmationScreen';
 import { ConciergeScreen } from './screens/ConciergeScreen';
 import { MerchantConsoleScreen } from './screens/MerchantConsoleScreen';
-import { CustomerAuthScreen } from './screens/CustomerAuthScreen';
 import { AdminAuthScreen } from './screens/AdminAuthScreen';
-import { CustomerProfileScreen } from './screens/CustomerProfileScreen';
 
 const MainLayout: React.FC = () => {
   const { currentScreen, isAdminAuthenticated } = useApp();
@@ -38,10 +36,6 @@ const MainLayout: React.FC = () => {
         return <OrderConfirmationScreen />;
       case 'concierge':
         return <ConciergeScreen />;
-      case 'login':
-        return <CustomerAuthScreen />;
-      case 'profile':
-        return <CustomerProfileScreen />;
       case 'admin-login':
         return <AdminAuthScreen />;
       case 'admin':

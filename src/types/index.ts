@@ -195,4 +195,5 @@ export interface DetectedLocation {
   address: string;
   pincode: string;
   state?: string;
+  source?: 'gps' | 'network' | 'ip' | 'manual';
 }

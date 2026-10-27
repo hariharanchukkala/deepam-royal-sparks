@@ -87,7 +87,7 @@ export const CatalogueScreen: React.FC<CatalogueScreenProps> = ({ onOpenCityModa
   ]);
 
   return (
-    <div className="pt-24 pb-44 max-w-md mx-auto px-4 space-y-4">
+    <div className="pt-28 pb-32 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
       {/* Search Input Bar */}
       <section className="flex items-center gap-2">
         <div className="relative flex-1">
@@ -321,16 +321,16 @@ export const CatalogueScreen: React.FC<CatalogueScreenProps> = ({ onOpenCityModa
         </div>
       )}
 
-      {/* Product Cards Grid */}
-      <section className="space-y-3.5">
+      {/* Product Cards Grid: 1 column on mobile, 2 on tablet, 3 on laptop, 4 on desktop */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </section>
 
-      {/* Floating Bottom Cart Bar (Only when Cart has items!) */}
+      {/* Floating Bottom Cart Bar (Only when Cart has items on mobile devices!) */}
       {cartCount > 0 && (
-        <aside className="fixed bottom-[60px] left-0 w-full z-40 px-4 max-w-md mx-auto pointer-events-none">
+        <aside className="fixed bottom-[60px] left-0 w-full z-40 px-4 max-w-md mx-auto pointer-events-none md:hidden">
           <div className="pointer-events-auto bg-[#fff8f5]/95 backdrop-blur-md border border-[#D4AF37]/50 rounded-xl p-2.5 shadow-[0_8px_28px_rgba(102,16,35,0.18)] flex items-center justify-between gap-2">
             <div className="pl-1">
               <span className="text-xs font-bold text-[#450011] block">

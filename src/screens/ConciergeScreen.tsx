@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 
 export const ConciergeScreen: React.FC = () => {
-  const { settings } = useApp();
+  const { settings, detectedLocation } = useApp();
   const [inquiryType, setInquiryType] = useState<string>('Wedding & Society Display');
   const [guestCount, setGuestCount] = useState<string>('50 - 200 Guests');
   const [customerName, setCustomerName] = useState<string>('');
-  const [city, setCity] = useState<string>('Bengaluru');
+  const [city, setCity] = useState<string>(detectedLocation?.city || 'Vijayawada');
   const [message, setMessage] = useState<string>('');
 
   const conciergeText =
@@ -22,7 +22,7 @@ export const ConciergeScreen: React.FC = () => {
   const waWebConciergeUrl = `https://web.whatsapp.com/send?phone=917993785371&text=${encodeURIComponent(conciergeText)}`;
 
   return (
-    <div className="pt-24 pb-36 max-w-md mx-auto px-4 space-y-4">
+    <div className="pt-24 pb-36 max-w-2xl lg:max-w-4xl mx-auto px-4 sm:px-6 space-y-4">
       <div>
         <div className="flex items-center gap-1.5 text-[#775a00]">
           <span className="material-symbols-outlined text-[18px] material-symbols-filled">
